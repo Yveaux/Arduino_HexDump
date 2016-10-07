@@ -49,7 +49,13 @@ void PrintHex( Stream& stream, const valueT val )
  * @param  buff         Ptr to block of data to print.
  * @param  len          Length of block to print, in [bytes].
  * @param  base         Optional address offset to use in priting.
- */
+ *
+ * A typical example to dump a block of data to the serial console:
+ * @code
+ * uint8_t data[100];
+ * HexDump(Serial, data, sizeof(data));
+ * @endcode
+*/
 template <typename addrT = size_t, uint8_t bytesPerRow = 16>
 void HexDump( Stream& stream, void* buff, size_t len, addrT base = 0 )
 {
